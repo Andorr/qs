@@ -1,5 +1,5 @@
 # QS CLI
-A simple command-line interface to interact with [QS](https://qs.stud.iie.ntnu.no/) - Dataingeniør's queue-system for delivering assignments.
+A simple command-line interface written in Go to interact with [QS](https://qs.stud.iie.ntnu.no/) - Dataingeniør's queue-system for delivering assignments.
 
 ```diff
 - Warning: The CLI might be out of date due to further development and changes to QS
@@ -7,6 +7,7 @@ A simple command-line interface to interact with [QS](https://qs.stud.iie.ntnu.n
 ```
 
 ## Installation
+This CLI requires Go to be installed. Run the command below to install the CLI on your computer.
 ```
 go get github.com/andorr/qs/cmd/qs
 ```
