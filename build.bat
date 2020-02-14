@@ -1,1 +1,1 @@
-go build -o C:\Libraries\qs.exe main.go
+go build -o C:\Libraries\qs.exe ./cmd/main.go
