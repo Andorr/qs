@@ -24,7 +24,7 @@ go get github.com/andorr/qs/cmd/qs
 ## Usage
 After installing the CLI should be available through the command line as such:
 ```
-qs
+qs -help
 ```
 
 ### Authentication
