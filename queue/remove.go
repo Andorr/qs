@@ -20,7 +20,7 @@ func removeCommand() cli.Command {
 	}
 }
 
-func handleRemove(ctx *cli.Context) {
+func handleRemove(ctx *cli.Context) error {
 	config := utils.MustGetConfig()
 
 	// Get queue element id
@@ -49,4 +49,6 @@ func handleRemove(ctx *cli.Context) {
 	}
 
 	fmt.Println("Done!")
+
+	return nil
 }

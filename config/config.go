@@ -18,7 +18,7 @@ func Command() cli.Command {
 	}
 }
 
-func PrintConfig(c *cli.Context) {
+func PrintConfig(c *cli.Context) error {
 	// Get config
 	config, err := utils.GetOrCreateConfig()
 	if err != nil {
@@ -33,4 +33,6 @@ func PrintConfig(c *cli.Context) {
 
 	// Print people
 	fmt.Printf("PEOPLE:\n%s\n\n", utils.MapToString(config.People))
+
+	return nil
 }

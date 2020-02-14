@@ -19,7 +19,7 @@ func LogInCommand() cli.Command {
 	}
 }
 
-func HandleLogIn(c *cli.Context) {
+func HandleLogIn(c *cli.Context) error {
 	config, err := utils.GetOrCreateConfig()
 	if err != nil {
 		log.Fatalf("Unable to read config!\nError: %s", err.Error())
@@ -38,4 +38,6 @@ func HandleLogIn(c *cli.Context) {
 		log.Fatalf("Was not able to save config.\nError: %s", err.Error())
 	}
 	fmt.Println("\nSuccessfully logged in!")
+
+	return nil
 }

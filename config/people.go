@@ -32,7 +32,7 @@ func PeopleCommand() cli.Command {
 	}
 }
 
-func PeopleCreate(c *cli.Context) {
+func PeopleCreate(c *cli.Context) error {
 	if c.NArg() < 2 {
 		log.Fatalf(utils.MissingArguments, c.Command.Usage)
 	}
@@ -61,10 +61,12 @@ func PeopleCreate(c *cli.Context) {
 	config.People = people
 	utils.MustSaveConfig(config)
 	fmt.Println("Done.")
+
+	return nil
 }
 
 
-func PeopleList(c *cli.Context) {
+func PeopleList(c *cli.Context) error {
 	config, err := utils.GetOrCreateConfig()
 	if err != nil {
 		log.Fatalf(utils.ConfigError, err.Error())
@@ -72,9 +74,11 @@ func PeopleList(c *cli.Context) {
 
 	fmt.Println("People list:")
 	fmt.Println(utils.MapToString(config.People))
+
+	return nil
 }
 
-func PeopleRemove(c *cli.Context) {
+func PeopleRemove(c *cli.Context) error {
 	// Check if number of arguments are included
 	if c.NArg() < 1 {
 		log.Fatalf(utils.MissingArguments, c.Command.Usage)
@@ -95,4 +99,6 @@ func PeopleRemove(c *cli.Context) {
 	config.People = people
 	utils.MustSaveConfig(config)
 	fmt.Println("Done.")
+
+	return nil
 }

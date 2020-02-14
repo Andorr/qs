@@ -29,7 +29,7 @@ func groupCommand() cli.Command {
 }
 
 // HandleGroup ...
-func handleGroup(c *cli.Context) {
+func handleGroup(c *cli.Context) error {
 	// Check if number of arguments is valid
 	if c.NArg() < 3 {
 		log.Fatalf(utils.MissingArguments, c.Command.Usage)
@@ -59,6 +59,8 @@ func handleGroup(c *cli.Context) {
 			fmt.Printf("Error: %s\n", err.Error())
 		}
 	}
+
+	return nil
 }
 
 // AddToGroup attempts to add a person to a group

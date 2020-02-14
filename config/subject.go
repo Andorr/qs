@@ -32,7 +32,7 @@ func SubjectCommand() cli.Command {
 	}
 }
 
-func SubjectCreate(c *cli.Context) {
+func SubjectCreate(c *cli.Context) error {
 	if c.NArg() < 2 {
 		log.Fatalf(utils.MissingArguments, c.Command.Usage)
 	}
@@ -61,16 +61,20 @@ func SubjectCreate(c *cli.Context) {
 	config.Subjects = subjects
 	utils.MustSaveConfig(config)
 	fmt.Println("Done.")
+
+	return nil
 }
 
-func SubjectList(c *cli.Context) {
+func SubjectList(c *cli.Context) error {
 	config := utils.MustGetConfig()
 
 	fmt.Println("Subject list:")
 	fmt.Println(utils.MapToString(config.Subjects))
+
+	return nil
 }
 
-func SubjectRemove(c *cli.Context) {
+func SubjectRemove(c *cli.Context) error {
 	// Check if number of arguments are included
 	if c.NArg() < 1 {
 		log.Fatalf(utils.MissingArguments, c.Command.Usage)
@@ -91,4 +95,6 @@ func SubjectRemove(c *cli.Context) {
 	config.Subjects = subjects
 	utils.MustSaveConfig(config)
 	fmt.Println("Done.")
+
+	return nil
 }

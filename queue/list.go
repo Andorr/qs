@@ -26,7 +26,7 @@ func listCommand() cli.Command {
 	}
 }
 
-func listQueue(ctx *cli.Context) {
+func listQueue(ctx *cli.Context) error {
 	config := utils.MustGetConfig()
 
 	// Get subject ID
@@ -70,6 +70,8 @@ func listQueue(ctx *cli.Context) {
 		}
 		time.Sleep(time.Second*2)
 	}
+
+	return nil
 }
 
 func stringifyQueueElement(index int, elem *qs.QueueElement, teachers map[int]string) string {

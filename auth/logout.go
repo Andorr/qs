@@ -20,7 +20,7 @@ func LogOutCommand() cli.Command {
 	}
 }
 
-func HandleLogOut(c *cli.Context) {
+func HandleLogOut(c *cli.Context) error {
 	config, err := utils.GetOrCreateConfig()
 	if err != nil {
 		log.Fatalf("Was not able to read config!\nError: %s\n", err.Error())
@@ -32,4 +32,6 @@ func HandleLogOut(c *cli.Context) {
 		log.Fatalf("Was not able to save config.\nError: %s\n", err.Error())
 	}
 	fmt.Println("Logged out!")
+
+	return nil
 }
