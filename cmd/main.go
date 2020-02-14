@@ -1,9 +1,9 @@
-package cmd
+package main
 
 import (
-	"QS/auth"
-	"QS/config"
-	"QS/queue"
+	"github.com/andorr/qs/auth"
+	"github.com/andorr/qs/config"
+	"github.com/andorr/qs/queue"
 	"github.com/urfave/cli"
 	"log"
 	"os"

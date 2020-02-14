@@ -1,8 +1,8 @@
 package queue
 
 import (
-	"QS/qs"
-	"QS/utils"
+	"github.com/andorr/qs/qs"
+	"github.com/andorr/qs/utils"
 	"fmt"
 	"github.com/inancgumus/screen"
 	"github.com/urfave/cli"

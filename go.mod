@@ -1,4 +1,4 @@
-module QS
+module github.com/andorr/qs
 
 go 1.12
 

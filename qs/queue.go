@@ -1,7 +1,7 @@
 package qs
 
 import (
-	"QS/utils"
+	"github.com/andorr/qs/utils"
 	"encoding/json"
 	"time"
 )

@@ -1,7 +1,7 @@
 package queue
 
 import (
-	"QS/utils"
+	"github.com/andorr/qs/utils"
 	"encoding/json"
 	"fmt"
 	"github.com/urfave/cli"

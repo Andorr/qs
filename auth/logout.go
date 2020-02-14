@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"QS/utils"
+	"github.com/andorr/qs/utils"
 	"fmt"
 	"github.com/urfave/cli"
 	"log"
