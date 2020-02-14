@@ -6,6 +6,15 @@ A simple command-line interface written in Go to interact with [QS](https://qs.s
 - This project was last updated at 15.02.2020 
 ```
 
+## Contents
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Authentication](#authentication)
+    - [Adding subject](#adding-your-subject)
+    - [Add to queue](#add-yourself-to-the-queue)
+    - [Add to queue with friends](#add-yourself-to-queue-with-friends)
+- [Functionality](#functionality)
+
 ## Installation
 This CLI requires Go to be installed. Run the command below to install the CLI on your computer.
 ```
