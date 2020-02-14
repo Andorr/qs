@@ -4,7 +4,7 @@ import (
 	"github.com/andorr/qs/utils"
 	"encoding/json"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"strconv"
 )
@@ -15,15 +15,15 @@ type groupPayload struct {
 	SubjectPersonID int `json:"subjectPersonID"`
 }
 
-func groupCommand() cli.Command {
-	return cli.Command {
+func groupCommand() *cli.Command {
+	return &cli.Command {
 		Name: "group",
 		Aliases: []string{"g"},
 		Description: "Sets a person in group with an existing queueElement.",
 		Usage: "qs queue group <QUEUE_ELEMENT_ID> <NAMES> <EXERCISES>",
 		Action: handleGroup,
 		Flags: []cli.Flag{
-			cli.BoolFlag{Name: "ids"},
+			&cli.BoolFlag{Name: "ids"},
 		},
 	}
 }

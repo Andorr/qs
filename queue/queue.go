@@ -4,7 +4,7 @@ import (
 	"github.com/andorr/qs/utils"
 	"encoding/json"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"strconv"
 	"strings"
@@ -20,11 +20,11 @@ type payload struct {
 	Help bool `json:"help"`
 }
 
-func Command() cli.Command {
-	return cli.Command {
+func Command() *cli.Command {
+	return &cli.Command {
 		Name: "queue",
 		Aliases: []string{"q"},
-		Subcommands: []cli.Command {
+		Subcommands: []*cli.Command {
 			queueAddCommand(),
 			groupCommand(),
 			listCommand(),
@@ -33,19 +33,19 @@ func Command() cli.Command {
 	}
 }
 
-func queueAddCommand() cli.Command {
-	return cli.Command{
+func queueAddCommand() *cli.Command {
+	return &cli.Command{
 		Name: "add",
 		Description: "Adds the user to the queue",
 		Usage: "qs queue add <SUBJECT_NAME> <EXERCISES>",
 		Action: handleQueue,
 		Flags: []cli.Flag{
-			cli.IntFlag{Name: "desk, d", Value: 9},
-			cli.IntFlag{Name: "room", Value: 6},
-			cli.StringFlag{Name: "group"},
-			cli.BoolFlag{Name: "groupIds"},
-			cli.BoolFlag{Name: "id"},
-			cli.IntFlag{Name: "sleep", Value: 500},
+			&cli.IntFlag{Name: "desk, d", Value: 9},
+			&cli.IntFlag{Name: "room", Value: 6},
+			&cli.StringFlag{Name: "group"},
+			&cli.BoolFlag{Name: "groupIds"},
+			&cli.BoolFlag{Name: "id"},
+			&cli.IntFlag{Name: "sleep", Value: 500},
 		},
 	}
 }

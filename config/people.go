@@ -3,27 +3,29 @@ package config
 import (
 	"github.com/andorr/qs/utils"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"strconv"
 )
 
-func PeopleCommand() cli.Command {
-	return cli.Command{
+func PeopleCommand() *cli.Command {
+
+
+	return &cli.Command{
 		Name: "people",
 		Aliases: []string{"people", "p"},
 		Usage: "sql config people",
-		Subcommands: []cli.Command {
-			cli.Command{
+		Subcommands: []*cli.Command {
+			{
 				Name: "list",
 				Action: PeopleList,
 			},
-			cli.Command{
+			{
 				Name: "add",
 				Usage: "qs config people add <NAME> <PERSON_ID>",
 				Action: PeopleCreate,
 			},
-			cli.Command{
+			{
 				Name: "remove",
 				Usage: "qs config people remove <NAME>",
 				Action: PeopleRemove,

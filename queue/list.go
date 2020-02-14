@@ -5,7 +5,7 @@ import (
 	"github.com/andorr/qs/utils"
 	"fmt"
 	"github.com/inancgumus/screen"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"sort"
 	"strconv"
@@ -13,15 +13,15 @@ import (
 	"time"
 )
 
-func listCommand() cli.Command {
-	return cli.Command{
+func listCommand() *cli.Command {
+	return &cli.Command{
 		Name: "list",
 		Usage: "qs queue list <SUBJECT_NAME>",
 		Action: listQueue,
 		Flags: []cli.Flag {
-			cli.BoolFlag{Name: "id"},
-			cli.IntFlag{Name: "limit", Value: -1},
-			cli.IntFlag{Name: "ext"},
+			&cli.BoolFlag{Name: "id"},
+			&cli.IntFlag{Name: "limit", Value: -1},
+			&cli.IntFlag{Name: "ext"},
 		},
 	}
 }

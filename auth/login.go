@@ -3,17 +3,17 @@ package auth
 import (
 	"github.com/andorr/qs/utils"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 )
 
-func LogInCommand() cli.Command {
-	return cli.Command{
+func LogInCommand() *cli.Command {
+	return &cli.Command{
 		Name: "login",
 		Action: HandleLogIn,
 		Flags: []cli.Flag {
-			cli.StringFlag{
-				Name:        "cookie",
+			&cli.StringFlag{
+				Name: "cookie",
 			},
 		},
 	}

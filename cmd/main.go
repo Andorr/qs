@@ -4,7 +4,7 @@ import (
 	"github.com/andorr/qs/auth"
 	"github.com/andorr/qs/config"
 	"github.com/andorr/qs/queue"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"os"
 )
@@ -17,7 +17,7 @@ func main() {
 	app.Version = "1.0.0"
 	app.Usage = "qs <COMMAND> [arguments...]"
 
-	app.Commands = []cli.Command{
+	app.Commands = []*cli.Command{
 		queue.Command(),
 		auth.LogInCommand(),
 		auth.LogOutCommand(),

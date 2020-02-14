@@ -3,27 +3,27 @@ package config
 import (
 	"github.com/andorr/qs/utils"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"strconv"
 )
 
-func SubjectCommand() cli.Command {
-	return cli.Command{
+func SubjectCommand() *cli.Command {
+	return &cli.Command{
 		Name: "subject",
 		Aliases: []string{"subjects", "s"},
 		Usage: "sql config subject",
-		Subcommands: []cli.Command {
-			cli.Command{
+		Subcommands: []*cli.Command {
+			{
 				Name: "list",
 				Action: SubjectList,
 			},
-			cli.Command{
+			{
 				Name: "add",
 				Usage: "qs config subjects add <NAME> <SUBJECT_ID>",
 				Action: SubjectCreate,
 			},
-			cli.Command{
+			{
 				Name: "remove",
 				Usage: "qs config subjects remove <NAME>",
 				Action: SubjectRemove,

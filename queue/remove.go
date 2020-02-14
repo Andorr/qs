@@ -4,18 +4,18 @@ import (
 	"github.com/andorr/qs/qs"
 	"github.com/andorr/qs/utils"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 	"strconv"
 )
 
-func removeCommand() cli.Command {
-	return cli.Command{
+func removeCommand() *cli.Command {
+	return &cli.Command{
 		Name: "remove",
 		Usage: "qs queue remove <SUBJECT_NAME> <QUEUE_ELEMENT_ID>",
 		Action: handleRemove,
 		Flags: []cli.Flag {
-			cli.BoolFlag{Name: "id"},
+			&cli.BoolFlag{Name: "id"},
 		},
 	}
 }

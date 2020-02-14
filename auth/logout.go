@@ -3,17 +3,17 @@ package auth
 import (
 	"github.com/andorr/qs/utils"
 	"fmt"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"log"
 )
 
-func LogOutCommand() cli.Command {
-	return cli.Command{
+func LogOutCommand() *cli.Command {
+	return &cli.Command{
 		Name: "logout",
 		Usage: "qs logout",
 		Action: HandleLogOut,
 		Flags: []cli.Flag {
-			cli.StringFlag{
+			&cli.StringFlag{
 				Name: "cookie",
 			},
 		},
