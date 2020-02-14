@@ -1,0 +1,1 @@
+go build -o C:\Libraries\qs.exe main.go
