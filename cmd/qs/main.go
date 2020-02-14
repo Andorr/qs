@@ -1,4 +1,4 @@
-package main
+package qs
 
 import (
 	"github.com/andorr/qs/auth"
